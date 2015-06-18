@@ -1,5 +1,5 @@
 <header>
-  <h1>Delete this Task?</h1>
+  <h1>Delete this Task</h1>
 </header>
 <main>
   <table>
@@ -27,6 +27,6 @@
     </tr>
   </table>
 <footer>
-  <%= link_to 'Confirm Deletion', t, method: :delete %>
+  <%= button_to "Delete!", "/delete/#{@delete_task.id}", method: :delete, data: { confirm: "You Sure You Sure?"} %>
 </footer>
 </main>

@@ -17,6 +17,7 @@ class TasksController < ApplicationController
 
   def destroy
     @delete_task = Task.find(params[:id])
+    @delete_task.destroy
     redirect_to root_url
   end
 

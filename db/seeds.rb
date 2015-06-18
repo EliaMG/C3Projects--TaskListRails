@@ -10,16 +10,16 @@ def random_time
 end
 
 tasks = [
-  {name: "The First Task", description: "", completed_date: random_time},
-  {name: "Go to Brunch", description: ""},
-  {name: "Go to Lunch", description: "", completed_date: random_time},
-  {name: "Go to Second Lunch", description: ""},
-  {name: "Play Video Games", description: "", completed_date: random_time},
-  {name: "High Five Somebody You Don't Know", description: "", completed_date: random_time},
-  {name: "Plant Flowers", description: "", completed_date: random_time},
-  {name: "Call Mom", description: ""},
-  {name: "She worries, you know.", description: ""},
-  {name: "Nap.", description: "", completed_date: random_time}
+  {name: "Run away from Zombie", description: "Because they think your brains are food.", completed_date: random_time},
+  {name: "Go to Brunch", description: "Where do you want to go to brunch? Not too crowded."},
+  {name: "Go to Lunch", description: "Pho is delicious for lunch", completed_date: random_time},
+  {name: "Go to Second Lunch", description: "Maybe you would like spring rolls for second lunch"},
+  {name: "Play Video Games", description: "Throwback to classic MarioCart", completed_date: random_time},
+  {name: "High Five Somebody You Don't Know", description: "Do you know how weird people think you are if you do this?", completed_date: random_time},
+  {name: "Plant Flowers", description: "Probably some daisies and california poppies", completed_date: random_time},
+  {name: "Call Dad", description: "It is almost Father's Day"},
+  {name: "Call your Zombie Friend", description: "He only wants to eat your eyes"},
+  {name: "Nap.", description: "But only if it won't make you drowy", completed_date: random_time}
 ]
 
 tasks.each do |task|

@@ -1,12 +1,12 @@
-<body>
 <header>
   <h1>Welcome to your tasklist!</h1>
 </header>
 <main>
   <table>
     <tr>
-      <th> Task Name </th>
-      <th> Completed?</th>
+      <th>Task Name</th>
+      <th>Completed?</th>
+      <th>Delete Task</th>
     </tr>
 
   <% @all_tasks.each do |task| %>
@@ -16,10 +16,11 @@
       <td> <%= "\u2713" %></td>
     <% else %>
       <td> <%= "\u2610" %> </td>
-      </tr>
     <% end %>
+  <td><%= link_to "Delete Me", "confirm_delete/#{task.id}" %> </td>
+  </tr>
   <% end %>
+
   </table>
-  <%= link_to "Add a Task", "/new_task" %>
+  <h3><%= link_to "Add a Task", "/new_task" %></h3>
 </main>
-</body>

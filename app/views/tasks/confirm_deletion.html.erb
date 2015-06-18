@@ -1,32 +1,32 @@
 <header>
-  <h1>Task Details</h1>
+  <h1>Delete this Task?</h1>
 </header>
 <main>
   <table>
     <tr>
       <th>Id</th>
-      <td><%= @show_task.id %></td>
+      <td><%= @delete_task.id %></td>
     </tr>
     <tr>
         <th> Task Name</th>
-        <td><%= @show_task.name %></td>
+        <td><%= @delete_task.name %></td>
     </tr>
     <tr>
       <th> Task Description</th>
-      <td><%= @show_task.description %></td>
+      <td><%= @delete_task.description %></td>
     </tr>
     <tr>
         <th> Completed Date</th>
-        <% if @show_task.completed_date == nil %>
+        <% if @delete_task.completed_date == nil %>
           <td> <%= "Incomplete task" %> </td>
         <% else %>
-          <% date = @show_task.completed_date %>
+          <% date = @delete_task.completed_date %>
           <% date = date.strftime("%m/%d/%Y") %>
           <td> <%= date %> </td>
         <% end %>
     </tr>
   </table>
 <footer>
-  <%= link_to "Home", "/" %>
+  <%= link_to 'Confirm Deletion', t, method: :delete %>
 </footer>
 </main>

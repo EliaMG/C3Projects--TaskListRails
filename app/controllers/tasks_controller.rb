@@ -10,6 +10,16 @@ class TasksController < ApplicationController
     render :show
   end
 
+  def confirm_deletion
+    @delete_task = Task.find(params[:id])
+    render :confirm_deletion
+  end
+
+  def destroy
+    @delete_task = Task.find(params[:id])
+    redirect_to root_url
+  end
+
   def new
     @new_task = Task.new
   end

@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   # Example of regular route:
   get 'show/:id' => 'tasks#show'
 
+  get 'confirm_delete/:id' => 'tasks#confirm_deletion'
+
+  post 'delete/:id' => 'tasks#destroy'
+
   get '/new_task' => 'tasks#new'
 
   post '/tasks' => 'tasks#create'

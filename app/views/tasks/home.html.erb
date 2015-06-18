@@ -1,18 +1,22 @@
-<h2>Welcome to your tasklist!</h2>
-<table>
-  <tr>
-    <th> Task Name </th>
-    <th> Completed?</th>
-  </tr>
+<header>
+  <h1>Welcome to your tasklist!</h1>
+</header>
+<body>
+  <table>
+    <tr>
+      <th> Task Name </th>
+      <th> Completed?</th>
+    </tr>
 
-<% @all_tasks.each do |task| %>
-<tr>
-<td><%= link_to "#{task.name}", "show/#{task.id}" %> </td>
-  <% if task.completed_date != nil %>
-  <td> <%= "\u2713" %></td>
-  <% else %>
-  <td> <%= "\u2610" %> </td>
-  </tr>
+  <% @all_tasks.each do |task| %>
+  <tr>
+  <td><%= link_to "#{task.name}", "show/#{task.id}" %> </td>
+    <% if task.completed_date != nil %>
+    <td> <%= "\u2713" %></td>
+    <% else %>
+    <td> <%= "\u2610" %> </td>
+    </tr>
+    <% end %>
   <% end %>
-<% end %>
-</table>
+  </table>
+</body>

@@ -1,3 +1,48 @@
-// Place all the styles related to the task controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ html {
+   margin: 0 auto;
+   padding: 0;
+   background-image: url("upfeathers.png");
+   background-repeat: repeat;
+   font-family: 'Cabin', sans-serif;
+   color: #391D4D;
+ }
+
+ header {
+   position: absolute;
+   top: 52px;
+   left: 200px;
+ }
+
+ body {
+   margin: 0 auto;
+   width: 960px;
+   background: #89A8A3;
+   padding: 15px;
+   margin-top: 115px;
+   border-radius: 5px;
+ }
+
+ h1 {
+   color: #391d4d;
+   font-size: 48px;
+   margin: 0;
+ }
+
+// Links
+a {
+  color: #6b2148;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #A24252;
+}
+
+// Tables
+
+table {
+ text-align: left;
+ vertical-align: middle;
+ width: 600px;
+ }

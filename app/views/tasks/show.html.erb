@@ -1,7 +1,24 @@
-<h1>Task Details</h1>
+<header>
+  <h1>Task Details</h1>
+</header>
+<body>
   <table>
-  <%= @task.id %>
-  <%= @task.name %>
-  <%= @task.description %>
-  <%= @task.completed_date %>
+    <tr>
+      <th>Id</th>
+      <td><%= @task.id %></td>
+    </tr>
+   <tr>
+      <th> Task Name</th>
+      <td><%= @task.name %></td>
+   </tr>
+   <tr>
+      <th> Task Description</th>
+      <td><%= @task.description %></td>
+   </tr>
+  <tr>
+      <th> Completed Date</th>
+      <% date = @task.completed_date.to_date %>
+      <td> <%= date %> </td>
+  </tr>
   </table>
+</body>

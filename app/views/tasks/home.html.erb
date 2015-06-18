@@ -1,7 +1,8 @@
+<body>
 <header>
   <h1>Welcome to your tasklist!</h1>
 </header>
-<body>
+<main>
   <table>
     <tr>
       <th> Task Name </th>
@@ -12,11 +13,12 @@
   <tr>
   <td><%= link_to "#{task.name}", "show/#{task.id}" %> </td>
     <% if task.completed_date != nil %>
-    <td> <%= "\u2713" %></td>
+      <td> <%= "\u2713" %></td>
     <% else %>
-    <td> <%= "\u2610" %> </td>
-    </tr>
+      <td> <%= "\u2610" %> </td>
+      </tr>
     <% end %>
   <% end %>
-  </table>
+</table>
+</main>
 </body>

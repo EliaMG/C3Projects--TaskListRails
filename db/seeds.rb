@@ -19,7 +19,7 @@ tasks = [
   {name: "Plant Flowers", description: "Probably some daisies and california poppies", completed_date: random_time},
   {name: "Call Dad", description: "It is almost Father's Day"},
   {name: "Call your Zombie Friend", description: "He only wants to eat your eyes"},
-  {name: "Nap.", description: "But only if it won't make you drowy", completed_date: random_time}
+  {name: "Nap.", description: "But only if it won't make you drowsy", completed_date: random_time}
 ]
 
 tasks.each do |task|

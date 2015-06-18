@@ -6,8 +6,24 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
+    @show_task = Task.find(params[:id])
     render :show
   end
+
+  def new
+    @new_task = Task.new
+  end
+
+  def create
+    @new_task = Task.new(create_params[:task])
+    @new_task.save
+    redirect_to :home
+  end
+
+private
+
+def create_params
+  params.permit(task: [:name, :description, :completed_date])
+end
 
 end

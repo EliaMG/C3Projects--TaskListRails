@@ -6,22 +6,22 @@
   <table>
     <tr>
       <th>Id</th>
-      <td><%= @task.id %></td>
+      <td><%= @show_task.id %></td>
     </tr>
     <tr>
         <th> Task Name</th>
-        <td><%= @task.name %></td>
+        <td><%= @show_task.name %></td>
     </tr>
     <tr>
       <th> Task Description</th>
-      <td><%= @task.description %></td>
+      <td><%= @show_task.description %></td>
     </tr>
     <tr>
         <th> Completed Date</th>
-        <% if @task.completed_date == nil %>
+        <% if @show_task.completed_date == nil %>
           <td> <%= "Incomplete task" %> </td>
         <% else %>
-          <% date = @task.completed_date %>
+          <% date = @show_task.completed_date %>
           <% date = date.strftime("%m/%d/%Y") %>
           <td> <%= date %> </td>
         <% end %>

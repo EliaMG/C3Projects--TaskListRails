@@ -17,7 +17,7 @@ class TasksController < ApplicationController
   def create
     @new_task = Task.new(create_params[:task])
     @new_task.save
-    redirect_to :home
+    redirect_to root_url
   end
 
 private

@@ -33,6 +33,18 @@ class TasksController < ApplicationController
     redirect_to root_url
   end
 
+  def complete
+    @complete_task = Task.find(params[:id])
+    @complete_task.update(completed_date: Time.now)
+    redirect_to root_url
+  end
+
+  def uncomplete
+    @uncomplete_task = Task.find(params[:id])
+    @uncomplete_task.update(completed_date: nil)
+    redirect_to root_url
+  end
+
 private
 
 # strong params

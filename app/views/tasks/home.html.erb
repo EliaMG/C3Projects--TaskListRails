@@ -1,10 +1,10 @@
 <header>
-  <h1>Welcome to your tasklist!</h1>
+  <h1>Tasks</h1>
 </header>
 <main>
   <table>
     <tr>
-      <th>Task Name</th>
+      <th>Task Name (click for details/to edit)</th>
       <th>Completed?</th>
       <th>Delete Task</th>
     </tr>
@@ -13,11 +13,11 @@
   <tr>
   <td><%= link_to "#{task.name}", "show/#{task.id}" %> </td>
     <% if task.completed_date != nil %>
-      <td> <%= "\u2713" %></td>
+      <td> <%= link_to "\u2713", "tasks/uncomplete/#{task.id}"  %> </td>
     <% else %>
-      <td> <%= "\u2610" %> </td>
+      <td> <%= link_to "\u2610", "tasks/complete/#{task.id}" %></td>
     <% end %>
-  <td><%= link_to "Delete Me!", "confirm_delete/#{task.id}" %> </td>
+  <td><%= link_to "\u2717", "confirm_delete/#{task.id}" %> </td>
   </tr>
   <% end %>
 

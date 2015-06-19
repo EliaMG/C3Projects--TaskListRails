@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   get 'confirm_delete/:id' => 'tasks#confirm_deletion'
   delete 'delete/:id' => 'tasks#destroy'
 
+  get 'tasks/complete/:id' => 'tasks#complete'
+  patch 'tasks/complete/:id' => 'tasks#complete'
+
+  get 'tasks/uncomplete/:id' => 'tasks#uncomplete'
+  patch 'tasks/uncomplete/:id' => 'tasks#uncomplete'
+
   # Added a post method because I created an add a task button.
   # Could I change the button action to "get" to prevent that? Investigate.
   get '/new_task' => 'tasks#new'

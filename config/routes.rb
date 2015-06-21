@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   get 'tasks/uncomplete/:id' => 'tasks#uncomplete'
   patch 'tasks/uncomplete/:id' => 'tasks#uncomplete'
 
+  get  'show/tasks/edit/:id' => 'tasks#edit'
+  patch '/tasks/update/:id' => 'tasks#update'
+
   # Added a post method because I created an add a task button.
   # Could I change the button action to "get" to prevent that? Investigate.
   get '/new_task' => 'tasks#new'

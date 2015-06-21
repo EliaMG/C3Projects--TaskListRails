@@ -26,6 +26,9 @@
         <% end %>
     </tr>
   </table>
+  <section class="button_placement">
+    <%= link_to "Edit Task", "tasks/edit/#{@show_task.id}" %>
+  </section>
 </main>
 <footer>
   <%= button_to "Home", "/", class: 'go_home'  %>

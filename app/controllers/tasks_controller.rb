@@ -33,6 +33,16 @@ class TasksController < ApplicationController
     redirect_to root_url
   end
 
+  def edit
+    @update_task = Task.find(params[:id])
+  end
+
+  def update
+    @update_task = Task.find(params[:id])
+    @update_task.update(create_params[:task])
+    redirect_to root_url
+  end
+
   def complete
     @complete_task = Task.find(params[:id])
     @complete_task.update(completed_date: Time.now)

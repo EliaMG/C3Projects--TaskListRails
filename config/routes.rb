@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'tasks#index'
-  post '/' => 'tasks#index'
 
   # Example of regular route:
   get 'show/:id' => 'tasks#show'
@@ -12,19 +11,19 @@ Rails.application.routes.draw do
   get 'confirm_delete/:id' => 'tasks#confirm_deletion'
   delete 'delete/:id' => 'tasks#destroy'
 
+  # routes for the check/uncheck boxes on the home page
   get 'tasks/complete/:id' => 'tasks#complete'
   patch 'tasks/complete/:id' => 'tasks#complete'
 
   get 'tasks/uncomplete/:id' => 'tasks#uncomplete'
   patch 'tasks/uncomplete/:id' => 'tasks#uncomplete'
 
+  # routes for the edit page off the show details page
   get  'show/tasks/edit/:id' => 'tasks#edit'
   patch '/tasks/update/:id' => 'tasks#update'
 
-  # Added a post method because I created an add a task button.
-  # Could I change the button action to "get" to prevent that? Investigate.
+  # Was able to change the button_to method to get and not need a post #new method :D
   get '/new_task' => 'tasks#new'
-  post '/new_task' => 'tasks#new'
   post '/tasks' => 'tasks#create'
   # get '/new' => 'tasks#new'
   # Example of named route that can be invoked with purchase_url(id: product.id)

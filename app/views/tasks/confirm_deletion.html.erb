@@ -30,6 +30,5 @@
   <%= button_to "Delete!", "/delete/#{@delete_task.id}", method: :delete, data: { confirm: "You Sure You Sure?"}, class: 'main_button' %>
 </section>
 </main>
-<footer>
-  <%= button_to "I made a terrible mistake. Home!", "/", class: 'go_home' %>
-</footer>
+
+<%= render "footer" %>

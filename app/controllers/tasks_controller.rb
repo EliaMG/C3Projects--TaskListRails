@@ -8,6 +8,7 @@ class TasksController < ApplicationController
 
   def show
     @header = "Task Details"
+    @adj = "update"
     @task = Task.find(params[:id])
     render :show
   end
@@ -42,11 +43,14 @@ class TasksController < ApplicationController
     @header = "Update Task"
     @adj = "update"
     @task = Task.find(params[:id])
+    @person = Person.find(params[:id])
   end
 
   def update
+    @person = Person.find(params[:id])
     @task = Task.find(params[:id])
     @task.update(create_params[:task])
+    @person.save(create_params[:person])
     redirect_to root_url
   end
 
@@ -64,9 +68,9 @@ class TasksController < ApplicationController
 
 private
 
-# strong params
-def create_params
-  params.permit(task: [:name, :description, :completed_date])
-end
+  # strong params
+  def create_params
+    params.permit(task: [:name, :description, :completed_date, :person_id])
+  end
 
 end

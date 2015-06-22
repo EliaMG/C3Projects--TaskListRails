@@ -23,8 +23,9 @@ Rails.application.routes.draw do
   patch '/tasks/update/:id' => 'tasks#update'
 
   # Was able to change the button_to method to get and not need a post #new method :D
+  # not sure the post method is RESTful, but it's what made the partial shared form work
   get '/new_task' => 'tasks#new'
-  post '/tasks' => 'tasks#create'
+  post '/tasks/add' => 'tasks#create'
   # get '/new' => 'tasks#new'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

@@ -1,42 +1,5 @@
-<header>
-  <h1>Update Task</h1>
-</header>
-<main>
+<%= render "header" %>
 
-<% if @update_task.name  %>
-  <% @update_name = @update_task.name %>
-<% else %>
-  <% @update_name = nil %>
-<% end %>
+<%= render "taskform" %>
 
-<% if @update_task.description  %>
-  <% @update_description = @update_task.description %>
-<% else %>
-  <% @update_description = nil %>
-<% end %>
-
-<% if @update_task.completed_date  %>
-  <% @update_completed = @update_task.completed_date %>
-<% else %>
-  <% @update_completed = nil %>
-<% end %>
-
-
-  <%= form_for @update_task, url: "/tasks/update/#{@update_task.id}" do |f| %>
-    <fieldset>
-      <%= f.label :name  %>
-      <%= f.text_field :name, value: @update_name, :required => true %>
-
-      <%= f.label :description  %>
-      <%= f.text_area :description, value: @update_description  %>
-
-      <%= f.label :completed_date  %>
-      <%= f.date_field :completed_date, value: @update_completed %>
-
-    </fieldset>
-    <section class="add_button">
-    <%= f.submit 'Update Task' %>
-    </section>
-  <% end %>
-</main>
 <%= render "footer" %>

@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+
+<main>
+  <table>
+    <tr>
+      <th>Person Id</th>
+      <th>Name</th>
+    </tr>
+
+    <% @all_people.each do |person| %>
+    <tr>
+      <td> <%= "#{person.id}" %> </td>
+      <td> <%= "#{person.name}" %></td>
+    </tr>
+    <% end %>
+  </table>
+</main>
+
+<%= render "shared/footer" %>

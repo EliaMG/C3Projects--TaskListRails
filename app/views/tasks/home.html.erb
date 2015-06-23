@@ -23,13 +23,14 @@
         <% end %>
       <td class="icon"><%= link_to "\u2717", "confirm_delete/#{task.id}" %></td>
         <% if task.person_id != nil %>
-          <% @person_name = Person.find("#{task.person_id}") %>
-          <td> <%= "#{@person_name.name}"  %> </td>
+          <% person_name = Person.find("#{task.person_id}") %>
+          <td> <%= "#{person_name.name}"  %> </td>
         <% end %>
     </tr>
     <% end %>
   </table>
   <section class="button_placement">
     <%= button_to "Add a Task", "/new_task", method: "get", class: "main_button" %>
+    <p><%= link_to "See Minion Details", "/people"  %> </p>
   </section>
 </main>

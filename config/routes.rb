@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'people' => 'people#index'
   # Example of regular route:
   get 'show/:id' => 'tasks#show'
+  get 'people/show/:id' => 'people/#show'
 
   get 'confirm_delete/:id' => 'tasks#confirm_deletion'
   delete 'delete/:id' => 'tasks#destroy'
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
 
   # routes for the edit page off the show details page
   get  'show/tasks/edit/:id' => 'tasks#edit'
+  get  'tasks/edit/:id' => 'tasks#edit'
   patch '/tasks/update/:id' => 'tasks#update'
 
   # Was able to change the button_to method to get and not need a post #new method :D

@@ -46,10 +46,8 @@ class TasksController < ApplicationController
   end
 
   def update
-    @person = Person.find(params[:id])
     @task = Task.find(params[:id])
     @task.update(create_params[:task])
-    @person.save(create_params[:person])
     redirect_to root_url
   end
 

@@ -21,4 +21,13 @@
         <td> <%= date %> </td>
       <% end %>
   </tr>
+  <tr>
+    <th> Assigned To</th>
+      <% if @task.person_id == nil %>
+        <td> <%= "Unassigned" %> </td>
+      <% else %>
+      <% person_name = Person.find("#{@task.person_id}") %>
+      <td> <%= "#{person_name.name}"  %> </td>
+    <% end %>
+  </tr>
 </table>

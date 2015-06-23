@@ -43,7 +43,6 @@ class TasksController < ApplicationController
     @header = "Update Task"
     @adj = "update"
     @task = Task.find(params[:id])
-    @person = Person.find(params[:id])
   end
 
   def update

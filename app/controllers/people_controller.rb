@@ -5,4 +5,12 @@ def index
   @all_people = Person.all
 end
 
+def show
+  @header = "Person Details"
+  @person = Person.find(params[:id])
+  @task = Task.find(params[:id])
+  render :show
+end
+
+
 end

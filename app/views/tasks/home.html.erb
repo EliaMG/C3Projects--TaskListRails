@@ -22,6 +22,10 @@
           <td class="icon"> <%= link_to "\u2610", "tasks/complete/#{task.id}" %></td>
         <% end %>
       <td class="icon"><%= link_to "\u2717", "confirm_delete/#{task.id}" %></td>
+        <% if task.person_id != nil %>
+          <% @person_name = Person.find("#{task.person_id}") %>
+          <td> <%= "#{@person_name.name}"  %> </td>
+        <% end %>
     </tr>
     <% end %>
   </table>

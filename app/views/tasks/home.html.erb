@@ -15,7 +15,7 @@
 
     <% @all_tasks.each do |task| %>
     <tr>
-      <td><%= link_to "#{task.name}", "show/#{task.id}" %> </td>
+      <td><%= link_to "#{task.name}", "tasks/show/#{task.id}" %> </td>
         <% if task.completed_date != nil %>
           <td class="icon"> <%= link_to "\u2713", "tasks/uncomplete/#{task.id}"  %></td>
         <% else %>

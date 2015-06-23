@@ -4,10 +4,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'tasks#index'
-  get 'people' => 'people#index'
   # Example of regular route:
-  get 'show/:id' => 'tasks#show'
-  get 'people/show/:id' => 'people/#show'
+  get 'tasks/show/:id' => 'tasks#show'
 
   get 'confirm_delete/:id' => 'tasks#confirm_deletion'
   delete 'delete/:id' => 'tasks#destroy'
@@ -20,8 +18,7 @@ Rails.application.routes.draw do
   patch 'tasks/uncomplete/:id' => 'tasks#uncomplete'
 
   # routes for the edit page off the show details page
-  get  'show/tasks/edit/:id' => 'tasks#edit'
-  get  'tasks/edit/:id' => 'tasks#edit'
+  get  'tasks/show/tasks/edit/:id' => 'tasks#edit'
   patch '/tasks/update/:id' => 'tasks#update'
 
   # Was able to change the button_to method to get and not need a post #new method :D
@@ -31,6 +28,8 @@ Rails.application.routes.draw do
   # get '/new' => 'tasks#new'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  get 'people' => 'people#index'
+  get 'people/show/:id' => 'people#show'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
     # resources :show

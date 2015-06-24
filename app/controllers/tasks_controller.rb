@@ -15,6 +15,8 @@ class TasksController < ApplicationController
 
   # renders the delete page
   def confirm_deletion
+    @header = "Delete this Task"
+
     @task = Task.find(params[:id])
     render :confirm_deletion
   end

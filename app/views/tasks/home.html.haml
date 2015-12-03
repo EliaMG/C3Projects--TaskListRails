@@ -1,0 +1,31 @@
+=render "shared/header"
+
+%main
+  %table
+    %tr
+      %th Task Name
+      %th Completed?
+      %th Delete Task
+      %th Assigned to
+
+    %tr
+      %td (click each for details/to edit)
+
+    -@all_tasks.each do |task|
+    %tr
+      %td= link_to "#{task.name}", "tasks/show/#{task.id}"
+        -if task.completed_date != nil
+          %td.icon= link_to "\u2713", "tasks/uncomplete/#{task.id}"
+        -else
+          %td.icon= link_to "\u2610", "tasks/complete/#{task.id}"
+        -end
+      %td.icon= link_to "\u2717", "confirm_delete/#{task.id}"
+        -if task.person_id != nil
+          -person_name = Person.find("#{task.person_id}")
+          %td= "#{person_name.name}"
+        -end
+    -end
+
+  %section.button_placement
+    =button_to "Add a Task", "/new_task", method: "get", class: "main_button"
+    %p= link_to "See Minion Details", "/people"
